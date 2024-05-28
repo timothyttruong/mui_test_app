@@ -15,7 +15,7 @@ const StateOne = () => {
 
   return (
     <Box>
-        {/**<Header />*/}
+        <Header />
 
         <Stack direction="row" sx={{display:"flex", justifyContent:"center"}}>
             <Button sx={{fontSize:"100px", color:"secondary"}} onClick={() => Subtraction()}>
