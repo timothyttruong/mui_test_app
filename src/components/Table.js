@@ -14,7 +14,7 @@ export const TablePage = () => {
   //So when the page is opened, useEffect starts fetching, and the loading is still true,therefore it shows loading page
   useEffect(() => {
     const delay = setTimeout(() => {
-      fetch("https://jsonplaceholder.typicode.com/user")
+      fetch("https://jsonplaceholder.typicode.com/users")
         .then((response) => {
           if (!response.ok) {
             throw Error("Failed to fetch data");
