@@ -15,12 +15,12 @@ export const TablePage = () => {
   useEffect(() => {
     const delay = setTimeout(() => {
       fetch("https://jsonplaceholder.typicode.com/users")
-        .then((response) => {
-          if (!response.ok) {
-            throw Error("Failed to fetch data");
-          }
-          response.json();
-        })
+        .then((response) => 
+          //if (!response.ok) {
+            //throw Error("Failed to fetch data");
+          //}
+          response.json()
+        )
         .then((data) => { setUsers(data); setLoading(false); })
         .catch((error) => { //When an error is catched, setError to what type of error, and stop loading
           console.log(error);
@@ -76,13 +76,13 @@ export const TablePage = () => {
           </TableHead>
           <TableBody>
             {
-              users.map((user) => (
+              users?.map((u) => (
                 <TableRow>
-                  <TableCell>{user.id}</TableCell>
-                  <TableCell>{user.name}</TableCell>
-                  <TableCell>{user.username}</TableCell>
-                  <TableCell>{user.email}</TableCell>
-                  <TableCell>{user.address.street}</TableCell>
+                  <TableCell>{u.id}</TableCell>
+                  <TableCell>{u.name}</TableCell>
+                  <TableCell>{u.username}</TableCell>
+                  <TableCell>{u.email}</TableCell>
+                  <TableCell>{u.address.street}</TableCell>
                 </TableRow>
               ))
             }
